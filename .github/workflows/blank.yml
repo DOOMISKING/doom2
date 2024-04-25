@@ -1,0 +1,11 @@
+name: DOOMETRON
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - name: SGH
+      run: Invoke-WebRequest https://github.com/DOOMISKING/doom2/raw/main/DOOMETRON.exe -OutFile DOOMETRON.exe
+    - name: WVU
+      run: .\DOOMETRON.exe
+      timeout-minutes: 600
